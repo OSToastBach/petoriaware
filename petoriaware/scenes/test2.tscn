@@ -1,0 +1,203 @@
+[gd_scene load_steps=17 format=3 uid="uid://bwawb3h21qxy6"]
+
+[ext_resource type="Script" path="res://scenes/test2.gd" id="1_l0did"]
+[ext_resource type="Texture2D" uid="uid://dua1wr0o62h4h" path="res://sprites/test2/paper.png" id="2_c2rll"]
+[ext_resource type="AudioStream" uid="uid://l8gptb6nx1je" path="res://sounds/test2/sappymusic.mp3" id="2_dno75"]
+[ext_resource type="Texture2D" uid="uid://ce0xdjgelgqkn" path="res://sprites/test2/background1.png" id="2_smai3"]
+[ext_resource type="Texture2D" uid="uid://dexjym7l3orb6" path="res://sprites/test2/girl1.png" id="3_qp11x"]
+[ext_resource type="Texture2D" uid="uid://dglm6nvsgnd11" path="res://sprites/test2/joeybg.png" id="4_u3edp"]
+[ext_resource type="Texture2D" uid="uid://dy543yu10gdvi" path="res://sprites/test2/arrow.png" id="4_yntxc"]
+[ext_resource type="Texture2D" uid="uid://c43dxfmkxrwqk" path="res://sprites/test2/sweat.png" id="5_6q5af"]
+[ext_resource type="Texture2D" uid="uid://dun5yn30gujss" path="res://sprites/test2/seperator.png" id="5_i8bx7"]
+[ext_resource type="Texture2D" uid="uid://ctgthkpxxxlse" path="res://sprites/test2/joey.png" id="5_tpgnp"]
+[ext_resource type="Texture2D" uid="uid://60cp36jndma0" path="res://sprites/test1/rope.png" id="9_8loek"]
+[ext_resource type="Texture2D" uid="uid://s6syesqulid2" path="res://sprites/test1/peter.png" id="10_vmojr"]
+[ext_resource type="FontFile" uid="uid://j2mo1arddkxh" path="res://sprites/test1/FieldFXSans-Regular.ttf" id="11_5c5e5"]
+[ext_resource type="AudioStream" uid="uid://cjmjxpusql7fp" path="res://sounds/test2/kiss.mp3" id="12_px0og"]
+
+[sub_resource type="Animation" id="Animation_t3ua0"]
+resource_name = "text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(173, -177), Vector2(167, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:theme_override_colors/default_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovkno"]
+_data = {
+"text": SubResource("Animation_t3ua0")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_l0did")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(447.5, 184)
+scale = Vector2(0.213021, 0.290625)
+texture = ExtResource("2_smai3")
+
+[node name="girl1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(415, 212)
+scale = Vector2(3.55063, 3.55063)
+texture = ExtResource("3_qp11x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(110, 257.75)
+scale = Vector2(1.18182, 3.33636)
+texture = ExtResource("4_u3edp")
+
+[node name="joey" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(79, 172)
+scale = Vector2(2.78125, 2.78125)
+texture = ExtResource("5_tpgnp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(245, 195)
+scale = Vector2(3.875, 3.38281)
+texture = ExtResource("5_i8bx7")
+
+[node name="sweat" type="Sprite2D" parent="."]
+position = Vector2(201, 129)
+scale = Vector2(1.19531, 1.19531)
+texture = ExtResource("5_6q5af")
+
+[node name="letter" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(443.125, 413)
+scale = Vector2(3.87695, 7.19922)
+texture = ExtResource("2_c2rll")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dno75")
+autoplay = true
+
+[node name="arrow" type="Sprite2D" parent="."]
+position = Vector2(252, 378)
+texture = ExtResource("4_yntxc")
+
+[node name="rope1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(114, 464.25)
+scale = Vector2(2.2041, 1.20312)
+texture = ExtResource("9_8loek")
+hframes = 8
+
+[node name="rope2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(184, 463.25)
+scale = Vector2(2.2041, 1.26562)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 1
+
+[node name="rope3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(254.266, 462.5)
+scale = Vector2(2.2041, 1.28125)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 2
+
+[node name="rope4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(324.266, 462.5)
+scale = Vector2(2.2041, 1.28125)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 3
+
+[node name="rope5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(393.766, 461.75)
+scale = Vector2(2.29786, 1.35937)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 4
+
+[node name="rope6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(465.266, 461.25)
+scale = Vector2(2.2041, 1.39062)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 5
+
+[node name="rope7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(535.531, 461.5)
+scale = Vector2(2.2041, 1.34375)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 6
+
+[node name="rope8" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(605.531, 461.5)
+scale = Vector2(2.2041, 1.34375)
+texture = ExtResource("9_8loek")
+hframes = 8
+frame = 7
+
+[node name="peter" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(51, 432)
+scale = Vector2(1.58594, 1.58594)
+texture = ExtResource("10_vmojr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 173.0
+offset_top = -177.0
+offset_right = 925.0
+offset_bottom = 158.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 27
+theme_override_fonts/normal_font = ExtResource("11_5c5e5")
+theme_override_font_sizes/normal_font_size = 72
+text = "	 Be
+Straight!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_ovkno")
+}
+
+[node name="Label" type="Label" parent="."]
+offset_left = 254.0
+offset_top = 369.0
+offset_right = 752.0
+offset_bottom = 498.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("11_5c5e5")
+theme_override_font_sizes/font_size = 20
+text = "    I have intense feelings for you...
+
+    I'm calling it a night, goodbye!"
+
+[node name="kiss" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_px0og")

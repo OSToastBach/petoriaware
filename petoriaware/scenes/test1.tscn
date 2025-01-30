@@ -1,0 +1,180 @@
+[gd_scene load_steps=15 format=3 uid="uid://74r3jpbky1bw"]
+
+[ext_resource type="AudioStream" uid="uid://dxw5uo76ohecc" path="res://sounds/test1/test1.ogg" id="1_c1qab"]
+[ext_resource type="Script" path="res://scenes/test1.gd" id="1_ekhlo"]
+[ext_resource type="Texture2D" uid="uid://s6syesqulid2" path="res://sprites/test1/peter.png" id="2_e60jy"]
+[ext_resource type="AudioStream" uid="uid://do08mr6mxotxe" path="res://sounds/test1/Windows XP Start.wav" id="2_trj2j"]
+[ext_resource type="Texture2D" uid="uid://dy1ebua4d8fnx" path="res://sprites/test1/xpbg.png" id="3_pf420"]
+[ext_resource type="Texture2D" uid="uid://60cp36jndma0" path="res://sprites/test1/rope.png" id="3_tlqjt"]
+[ext_resource type="Texture2D" uid="uid://bdelgt2apa7kr" path="res://sprites/test1/bninjasw.png" id="4_sq4fn"]
+[ext_resource type="AudioStream" uid="uid://cs7qwq4a4wbka" path="res://sounds/test1/exellente.mp3" id="5_4euam"]
+[ext_resource type="Texture2D" uid="uid://dimsw17x1r407" path="res://sprites/test1/bninja.png" id="6_6j5od"]
+[ext_resource type="FontFile" uid="uid://j2mo1arddkxh" path="res://sprites/test1/FieldFXSans-Regular.ttf" id="6_6m4wt"]
+[ext_resource type="Script" path="res://scenes/Area2D.gd" id="6_8l3rf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cx5t"]
+size = Vector2(70.5236, 73.002)
+
+[sub_resource type="Animation" id="Animation_t3ua0"]
+resource_name = "text"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(173, -177), Vector2(177, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:theme_override_colors/default_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ovkno"]
+_data = {
+"text": SubResource("Animation_t3ua0")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ekhlo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_c1qab")
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(438, 266)
+texture = ExtResource("3_pf420")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(326, 253)
+scale = Vector2(1.47468, 1.47941)
+script = ExtResource("6_8l3rf")
+
+[node name="exellente" type="AudioStreamPlayer2D" parent="Area2D"]
+position = Vector2(-221.064, -171.014)
+scale = Vector2(0.678112, 0.675944)
+stream = ExtResource("5_4euam")
+volume_db = 10.161
+
+[node name="click" type="AudioStreamPlayer2D" parent="Area2D"]
+position = Vector2(-221.064, -171.014)
+scale = Vector2(0.678112, 0.675944)
+stream = ExtResource("2_trj2j")
+volume_db = 24.0
+
+[node name="bninja" type="Sprite2D" parent="Area2D"]
+position = Vector2(-1.44206, 0.268372)
+scale = Vector2(1, 1)
+texture = ExtResource("6_6j5od")
+
+[node name="bninjasw" type="Sprite2D" parent="Area2D"]
+position = Vector2(-4.06867, -26.3618)
+scale = Vector2(0.272745, 0.268915)
+texture = ExtResource("4_sq4fn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-4.06868, -2.02788)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8cx5t")
+
+[node name="rope1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(114, 452)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+
+[node name="rope2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(184, 452)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 1
+
+[node name="rope3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(254.266, 451.5)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 2
+
+[node name="rope4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(324.266, 451.5)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 3
+
+[node name="rope5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(395.266, 452)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 4
+
+[node name="rope6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(465.266, 452)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 5
+
+[node name="rope7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(535.531, 451.5)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 6
+
+[node name="rope8" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(605.531, 451.5)
+scale = Vector2(2.2041, 1.96875)
+texture = ExtResource("3_tlqjt")
+hframes = 8
+frame = 7
+
+[node name="peter" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(51, 432)
+scale = Vector2(1.58594, 1.58594)
+texture = ExtResource("2_e60jy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 173.0
+offset_top = -177.0
+offset_right = 925.0
+offset_bottom = 158.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_6m4wt")
+theme_override_font_sizes/normal_font_size = 72
+text = "  Reverse
+Engineer!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_ovkno")
+}
